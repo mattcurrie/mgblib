@@ -27,7 +27,9 @@ ResetDisplay::
     ld a, $e4
     ld [rBGP], a
 
-IF DEF(CGB_MODE)
+    ld hl, $0143
+    bit 7, [hl]
+    jr z, .notCGB
 
     ld a, $80
     ldh [rBCPS], a
@@ -50,7 +52,7 @@ IF DEF(CGB_MODE)
     xor a
     ldh [rVBK], a
 
-ENDC  
+.notCGB::
 
     xor a
     ld hl, _VRAM

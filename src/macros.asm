@@ -34,9 +34,8 @@ wait_vram_accessible: MACRO
 
 
 ; Enable GameBoy Color (CGB) mode
-; Sets byte at address $0143 in the header to $80 and sets CGB_MODE to 1
+; Sets byte at address $0143 in the header to $80
 enable_cgb_mode: MACRO
-CGB_MODE = 1
 PUSHS
 SECTION "cgb-mode", ROM0[$143]
     db $80
