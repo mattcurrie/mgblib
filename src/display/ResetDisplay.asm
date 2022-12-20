@@ -14,18 +14,18 @@ ResetDisplay::
     call LcdOffSafe
 
     xor a
-    ld [rSTAT], a
-    ld [rSCX], a
-    ld [rSCY], a
+    ldh [rSTAT], a
+    ldh [rSCX], a
+    ldh [rSCY], a
 
     ; set window Y and LYC with an off-screen value so they have no effect
     ld a, 200
-    ld [rLYC], a
-    ld [rWY], a
+    ldh [rLYC], a
+    ldh [rWY], a
 
     ; set a default palette
     ld a, $e4
-    ld [rBGP], a
+    ldh [rBGP], a
 
     ld hl, $0143
     bit 7, [hl]
@@ -65,7 +65,7 @@ ResetDisplay::
     call MemSetSmall
 
     ld a, LCDCF_OFF | LCDCF_WIN9C00 | LCDCF_WINOFF | LCDCF_BG8800 | LCDCF_BG9800 | LCDCF_OBJ8 | LCDCF_OBJOFF | LCDCF_BGON
-    ld [rLCDC], a
+    ldh [rLCDC], a
 
     ret
 
