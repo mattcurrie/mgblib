@@ -22,7 +22,7 @@ PrintString::
 ; 
 ; @param \1 the string to print
 ; @destroys all
-print_string_literal: MACRO
+MACRO print_string_literal
     ld de, .string\@
     call PrintString
     jr .end\@

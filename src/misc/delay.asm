@@ -3,7 +3,7 @@ INC_delay = 1
 
 ; Delay for a specified number of M-cycles
 ; @param \1 Number of M-cycles to wait for
-delay: MACRO
+MACRO delay
 DELAY = (\1)
 
 IF DELAY >= 100000

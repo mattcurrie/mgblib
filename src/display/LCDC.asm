@@ -6,7 +6,7 @@ INCLUDE "src/display/WaitVBlank.asm"
 ; Turns the LCD on
 ;
 ; @destroys hl
-lcd_on: MACRO
+MACRO lcd_on
     ld hl, rLCDC
     set 7, [hl]
     ENDM
@@ -15,7 +15,7 @@ lcd_on: MACRO
 ; Turns the LCD off. Does NOT wait until Vblank
 ;
 ; @destroys hl
-lcd_off_unsafe: MACRO
+MACRO lcd_off_unsafe
     ld hl, rLCDC
     res 7, [hl]
     ENDM
@@ -42,7 +42,7 @@ LcdOffSafe::
 ; Sets the window map to be read from $9800-$9bff
 ;
 ; @destroys hl
-win_map_9800: MACRO
+MACRO win_map_9800
     ld hl, rLCDC
     res 6, [hl]
     ENDM
@@ -51,7 +51,7 @@ win_map_9800: MACRO
 ; Sets the window map to be read from $9c00-$9fff
 ;
 ; @destroys hl
-win_map_9c00: MACRO
+MACRO win_map_9c00
     ld hl, rLCDC
     set 6, [hl]
     ENDM
@@ -60,7 +60,7 @@ win_map_9c00: MACRO
 ; Disables the window
 ;
 ; @destroys hl
-disable_window: MACRO
+MACRO disable_window
     ld hl, rLCDC
     res 5, [hl]
     ENDM
@@ -69,7 +69,7 @@ disable_window: MACRO
 ; Enables the window
 ;
 ; @destroys hl
-enable_window: MACRO
+MACRO enable_window
     ld hl, rLCDC
     set 5, [hl]
     ENDM
@@ -79,7 +79,7 @@ enable_window: MACRO
 ; $8800-$97ff region for tile data.
 ;
 ; @destroys hl
-bg_tile_data_8800: MACRO
+MACRO bg_tile_data_8800
     ld hl, rLCDC
     res 4, [hl]
     ENDM
@@ -89,7 +89,7 @@ bg_tile_data_8800: MACRO
 ; $8000-$8fff region (same as sprites) for tile data.
 ;
 ; @destroys hl
-bg_tile_data_8000: MACRO
+MACRO bg_tile_data_8000
     ld hl, rLCDC
     set 4, [hl]
     ENDM
@@ -98,7 +98,7 @@ bg_tile_data_8000: MACRO
 ; Set the background map to be read from $9800-$9bff
 ;
 ; @destroys hl
-bg_map_9800: MACRO
+MACRO bg_map_9800
     ld hl, rLCDC
     res 3, [hl]
     ENDM
@@ -107,7 +107,7 @@ bg_map_9800: MACRO
 ; Set the background map to be read from $9c00-$9fff
 ;
 ; @destroys hl
-bg_map_9c00: MACRO
+MACRO bg_map_9c00
     ld hl, rLCDC
     set 3, [hl]
     ENDM
@@ -116,7 +116,7 @@ bg_map_9c00: MACRO
 ; Set the sprite height to 8 pixels 
 ;
 ; @destroys hl
-sprite_height_8px: MACRO
+MACRO sprite_height_8px
     ld hl, rLCDC
     res 2, [hl]
     ENDM
@@ -125,7 +125,7 @@ sprite_height_8px: MACRO
 ; Set the sprite size to 8x16 pixels 
 ;
 ; @destroys hl
-sprite_height_16px: MACRO
+MACRO sprite_height_16px
     ld hl, rLCDC
     set 2, [hl]
     ENDM
@@ -134,7 +134,7 @@ sprite_height_16px: MACRO
 ; Disable sprites
 ;
 ; @destroys hl
-disable_sprites: MACRO
+MACRO disable_sprites
     ld hl, rLCDC
     res 1, [hl]
     ENDM
@@ -143,7 +143,7 @@ disable_sprites: MACRO
 ; Enable sprites
 ;
 ; @destroys hl
-enable_sprites: MACRO
+MACRO enable_sprites
     ld hl, rLCDC
     set 1, [hl]
     ENDM
@@ -152,7 +152,7 @@ enable_sprites: MACRO
 ; Disable background (non-CGB only)
 ;
 ; @destroys hl
-disable_bg: MACRO
+MACRO disable_bg
     ld hl, rLCDC
     res 0, [hl]
     ENDM
@@ -161,7 +161,7 @@ disable_bg: MACRO
 ; Enable background (non-CGB only)
 ;
 ; @destroys hl
-enable_bg: MACRO
+MACRO enable_bg
     ld hl, rLCDC
     set 0, [hl]
     ENDM

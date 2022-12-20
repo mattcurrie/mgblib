@@ -27,7 +27,7 @@ MemCopy::
 ; @param \2 destination address
 ; @param \3 length in bytes
 ; @destroys all
-memcpy: MACRO
+MACRO memcpy
     ld hl, \1
     ld de, \2
     ld bc, \3
