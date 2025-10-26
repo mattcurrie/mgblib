@@ -27,10 +27,6 @@ ResetDisplay::
     ld a, $e4
     ldh [rBGP], a
 
-    ld hl, $0143
-    bit 7, [hl]
-    jr z, .notCGB
-
     ld a, $80
     ldh [rBCPS], a
 
@@ -58,11 +54,6 @@ ResetDisplay::
     ld hl, STARTOF(VRAM)
     ld bc, $2000
     call MemSet
-
-    xor a
-    ld hl, _OAMRAM
-    ld c, 160
-    call MemSetSmall
 
     ld a, LCDC_OFF | LCDC_WIN_9C00 | LCDC_WIN_OFF | LCDC_BLOCK21 | LCDC_BG_9800 | LCDC_OBJ_8 | LCDC_OBJ_OFF | LCDC_BG_ON
     ldh [rLCDC], a

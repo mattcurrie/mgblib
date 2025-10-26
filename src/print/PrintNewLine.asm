@@ -30,10 +30,18 @@ PrintNewLine::
     ; LSB overflowed so need to increment MSB
     inc hl
     inc [hl]
+    ld a, [hl]
 
-    ; bit 2 should never be set, as it means we reached $9c00, so unset it to wrap back to $9800
-    res 2, [hl] 
+    ; check if we need to wrap around
+    cp $9c
+    jr z, .wrap_around  
+    cp $a0
+    jr nz, .no_wrap
+.wrap_around::
+    sub 4
+    ld [hl], a
 
+.no_wrap::
     ; restore hl's value to wPrintCursorAddress
     dec hl
 

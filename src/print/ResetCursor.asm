@@ -6,9 +6,9 @@ DEF INC_ResetCursor = 1
 ; @destroys af
 ResetCursor::
     xor a
-    ldh [rSCY], a
-    ld [wPrintScrolling], a
     ld [wPrintCursorAddress], a
+    ld [wPrintScrolling], a
+    ldh [rSCY], a
     ld a, $98
     ld [wPrintCursorAddress + 1], a
     ret

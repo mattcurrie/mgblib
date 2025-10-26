@@ -16,6 +16,7 @@ PrintString::
     inc de
     jr .loop
 
+    ret
 
 ; Macro to print a string literal. 
 ; NUL terminator is appended automatically.

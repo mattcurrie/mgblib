@@ -49,12 +49,12 @@ UpdateJoypad::
     ld a,$30         
     ldh [rP1],a 
 
-    ldh a, [hJoypad]
+    ld a, [hJoypad]
     xor c            
     and c            
-    ldh [hJoypad2], a     
+    ld [hJoypad2], a     
     ld a, c           
-    ldh [hJoypad], a     
+    ld [hJoypad], a     
 
     ret
 

@@ -14,7 +14,8 @@ PrintHexU16NoDollar::
     ld a, d
     call PrintHexU8NoDollar
     ld a, e
-    jp PrintHexU8NoDollar
+    call PrintHexU8NoDollar
+    ret    
 
 
 ; Print a 8-bit value in hexidecimal, 2 digits with leading dollar symbol
@@ -32,6 +33,8 @@ PrintHexU8NoDollar::
     call PrintHexNibble
     pop af
     
+    call PrintHexNibble
+    ret    
     ; jp PrintHexNibble  - fall through to PrintHexNibble
 
 
