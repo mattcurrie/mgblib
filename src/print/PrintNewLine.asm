@@ -43,17 +43,17 @@ PrintNewLine::
     jr nz, .scrolling
 
     ; check if need to start scrolling yet
-    ; $9a40 = $9800 + 32 * 18 rows
     ld hl, wPrintCursorAddress + 1
     ld a, [hl-]
-    cp $9a
+    and 3     ; $9a & 3 == 2, $9e & 3 == 2. we scroll at $9a60 and $9e60
+    cp 2
     ret nz
 
     ld a, [hl]
-    cp $40
+    cp $60
     ret nz
 
-    ; reached $9a40, so set wPrintScrolling to 1
+    ; reached $9a60/$9e60, so set wPrintScrolling to 1
     ld a, 1
     ld [wPrintScrolling], a
 
