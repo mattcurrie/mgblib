@@ -1,0 +1,57 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "github:NixOS/nixpkgs/nixpkgs-unstable": {
+      "last_modified": "2025-10-16T06:36:44Z",
+      "resolved": "github:NixOS/nixpkgs/3cbe716e2346710d6e1f7c559363d14e11c32a43?lastModified=1760596604&narHash=sha256-J%2Fi5K6AAz%2Fy5dBePHQOuzC7MbhyTOKsd%2FGLezSbEFiM%3D"
+    },
+    "rgbds@0.9.4": {
+      "last_modified": "2025-10-07T08:41:47Z",
+      "resolved": "github:NixOS/nixpkgs/bce5fe2bb998488d8e7e7856315f90496723793c#rgbds",
+      "source": "devbox-search",
+      "version": "0.9.4",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/w68j8h255l20r8b6afdlkx30181qgbw9-rgbds-0.9.4",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/w68j8h255l20r8b6afdlkx30181qgbw9-rgbds-0.9.4"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/pzsw26sq9igw3nsp8rzz00pr734b8zlq-rgbds-0.9.4",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/pzsw26sq9igw3nsp8rzz00pr734b8zlq-rgbds-0.9.4"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/6vq2648map2hf4zp1313lahhzp5z83fb-rgbds-0.9.4",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/6vq2648map2hf4zp1313lahhzp5z83fb-rgbds-0.9.4"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/95qrf9v6ln7pk8b14vr9i77ls3zm47pi-rgbds-0.9.4",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/95qrf9v6ln7pk8b14vr9i77ls3zm47pi-rgbds-0.9.4"
+        }
+      }
+    }
+  }
+}
