@@ -1,5 +1,5 @@
 IF !DEF(INC_LoadFont)
-INC_LoadFont = 1
+DEF INC_LoadFont = 1
 
 INCLUDE "src/memory/MemCopy.asm"
 

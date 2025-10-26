@@ -1,5 +1,5 @@
 IF !DEF(INC_LCDC)
-INC_LCDC = 1
+DEF INC_LCDC = 1
 
 INCLUDE "src/display/WaitVBlank.asm"
 

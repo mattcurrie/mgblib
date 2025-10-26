@@ -1,5 +1,5 @@
 IF !DEF(INC_PrintDecimal)
-INC_PrintDecimal = 1
+DEF INC_PrintDecimal = 1
 
 INCLUDE "src/print/PrintCharacter.asm"
 

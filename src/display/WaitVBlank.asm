@@ -1,5 +1,5 @@
 IF !DEF(INC_WaitVBlank)
-INC_WaitVBlank = 1
+DEF INC_WaitVBlank = 1
 
 ; Wait for Vblank (i.e. rLY = $90). Checks that the screen is not turned off
 ; to prevent getting stuck in this function.

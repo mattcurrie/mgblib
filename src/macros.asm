@@ -1,5 +1,5 @@
 IF !DEF(INC_macros)
-INC_macros = 1 
+DEF INC_macros = 1 
 
 
 ; Wait until LY is a specified value
@@ -28,7 +28,7 @@ MACRO wait_vblank
 MACRO wait_vram_accessible
 .loop\@:
     ldh a, [rSTAT]
-    and STATF_BUSY
+    and STAT_BUSY
     jr nz, .loop\@
     ENDM
 

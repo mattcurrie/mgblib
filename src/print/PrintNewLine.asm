@@ -1,5 +1,5 @@
 IF !DEF(INC_PrintNewLine)
-INC_PrintNewLine = 1
+DEF INC_PrintNewLine = 1
 
 INCLUDE "src/macros.asm"
 

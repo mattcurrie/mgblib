@@ -1,5 +1,5 @@
 IF !DEF(INC_SerialSendByte)
-INC_SerialSendByte = 1
+DEF INC_SerialSendByte = 1
 
 ; Send a byte over the serial connection as master. 
 ; Waits until the send has completed.

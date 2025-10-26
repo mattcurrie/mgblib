@@ -1,5 +1,5 @@
 IF !DEF(INC_ResetCursor)
-INC_ResetCursor = 1
+DEF INC_ResetCursor = 1
 
 ; Resets the cursor position, so the next print will start at $9800
 ;

@@ -1,5 +1,5 @@
 IF !DEF(INC_delay)
-INC_delay = 1 
+DEF INC_delay = 1 
 
 ; Delay for a specified number of M-cycles
 ; @param \1 Number of M-cycles to wait for

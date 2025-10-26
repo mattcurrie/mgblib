@@ -1,5 +1,5 @@
 IF !DEF(INC_MemSetSmall)
-INC_MemSetSmall = 1
+DEF INC_MemSetSmall = 1
 
 ; Set a small amount memory < 256 bytes
 ; 

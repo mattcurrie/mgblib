@@ -1,5 +1,5 @@
 IF !DEF(INC_PrintString)
-INC_PrintString = 1
+DEF INC_PrintString = 1
 
 INCLUDE "src/print/PrintCharacter.asm"
 

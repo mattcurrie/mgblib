@@ -1,5 +1,5 @@
 IF !DEF(INC_PrintHex)
-INC_PrintHex = 1
+DEF INC_PrintHex = 1
 
 INCLUDE "src/print/PrintCharacter.asm"
 

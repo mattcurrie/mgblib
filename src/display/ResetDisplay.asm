@@ -1,5 +1,5 @@
 IF !DEF(INC_ResetDisplay)
-INC_ResetDisplay = 1
+DEF INC_ResetDisplay = 1
 
 INCLUDE "src/memory/MemSet.asm"
 INCLUDE "src/memory/MemSetSmall.asm"
@@ -44,7 +44,7 @@ ResetDisplay::
     ldh [rVBK], a
 
     xor a
-    ld hl, _VRAM
+    ld hl, STARTOF(VRAM)
     ld bc, $2000
     call MemSet
 
@@ -55,7 +55,7 @@ ResetDisplay::
 .notCGB::
 
     xor a
-    ld hl, _VRAM
+    ld hl, STARTOF(VRAM)
     ld bc, $2000
     call MemSet
 
@@ -64,7 +64,7 @@ ResetDisplay::
     ld c, 160
     call MemSetSmall
 
-    ld a, LCDCF_OFF | LCDCF_WIN9C00 | LCDCF_WINOFF | LCDCF_BG8800 | LCDCF_BG9800 | LCDCF_OBJ8 | LCDCF_OBJOFF | LCDCF_BGON
+    ld a, LCDC_OFF | LCDC_WIN_9C00 | LCDC_WIN_OFF | LCDC_BLOCK21 | LCDC_BG_9800 | LCDC_OBJ_8 | LCDC_OBJ_OFF | LCDC_BG_ON
     ldh [rLCDC], a
 
     ret

@@ -1,5 +1,5 @@
 IF !DEF(INC_MemSet)
-INC_MemSet = 1
+DEF INC_MemSet = 1
 
 ; Set some memory to a value
 ; 

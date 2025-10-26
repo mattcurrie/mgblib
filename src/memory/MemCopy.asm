@@ -1,5 +1,5 @@
 IF !DEF(INC_MemCopy)
-INC_MemCopy = 1
+DEF INC_MemCopy = 1
 
 ; Copy some memory
 ;

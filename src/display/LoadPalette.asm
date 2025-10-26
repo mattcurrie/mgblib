@@ -1,5 +1,5 @@
 IF !DEF(INC_LoadPalette)
-INC_LoadPalette = 1
+DEF INC_LoadPalette = 1
 
 ; Load CGB object palette data
 ; Must be called either during Vblank or with the LCD turned off.
@@ -27,14 +27,14 @@ LoadBackgroundPalette::
 LoadPalette::
     ; set the auto increment flag
     or $80
-    ld [c], a
+    ldh [c], a
 
     ; C = LOW(rBCPD)
     inc c
     
 .loop:
     ld a, [hl+]
-    ld [c], a
+    ldh [c], a
     dec b
     jr nz, .loop
 
